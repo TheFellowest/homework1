@@ -1,19 +1,16 @@
-public class Animal {
+public abstract class Animal {
     protected boolean isSleeping;
     protected boolean isEating;
     protected boolean isSpeaking;
-    protected String voice;
 
     public Animal (boolean sleeps, boolean eats, boolean speaks, String voice){
         this.isSleeping = sleeps;
         this.isEating = eats;
         this.isSpeaking = speaks;
-        this.voice = voice;
     }
     boolean getSleeps() {return this.isSleeping;}
     boolean getEats() {return this.isEating;}
     boolean getSpeaks() {return this.isSpeaking;}
-    String getVoice() {return this.voice; }
 
    void setSleeps(boolean sleeps) {
        this.isSleeping = sleeps;
@@ -27,7 +24,7 @@ public class Animal {
 
         if (speaks && !getSleeps()) {
             this.isSpeaking = true;
-            System.out.println(voice);
+            voice();
         } else {
             this.isSpeaking = false;
         }
@@ -39,4 +36,5 @@ public class Animal {
             System.out.println("It is eating");
         }
    }
+   public abstract void voice ();
 }
